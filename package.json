@@ -12,6 +12,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.13",
     "@babel/preset-env": "^7.18.10",
+    "@types/check-types": "^7.3.4",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.3",
@@ -28,6 +29,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "check-types": "^11.2.2",
     "jquery": "^3.7.0",
     "popper.js": "^1.16.1"
   }
