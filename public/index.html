@@ -6,7 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
 <body>
-    <div id="app"></div>
+    <div class="calculator d-flex justify-content-center">
+        <div class="wrapper bg-success bg-opacity-50 border border-success rounded">
+            <div class="screen bg-light bg-gradient mb-3">0</div>
+            <div class="grid mb-3">
+                <button class="calc-button g-col-6 btn btn-light" data-value="clear">AC</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="backspace">&larr;</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="divide">/</button>
+            </div>
+            <div class="grid mb-3">
+                <button class="calc-button g-col-3 btn btn-light" data-value="7">7</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="8">8</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="9">9</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="multipy">x</button>
+            </div>
+            <div class="grid mb-3">
+                <button class="calc-button g-col-3 btn btn-light" data-value="4">4</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="5">5</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="6">6</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="subtract">-</button>
+            </div>
+            <div class="grid mb-3">
+                <button class="calc-button g-col-3 btn btn-light" data-value="1">1</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="2">2</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="3">3</button>
+                <button class="calc-button g-col-3 btn btn-light" data-value="add">+</button>
+            </div>
+            <div class="grid">
+                <button class="calc-button g-col-9 btn btn-light" data-value="0">0</button>
+                <button class="calc-button g-col-3 btn btn-light">=</button>
+            </div>
+        </div>
+    </div>
     <script src="./bundle.js" type="text/javascript"></script>
 </body>
 </html>
