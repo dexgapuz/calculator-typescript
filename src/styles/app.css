@@ -4,5 +4,6 @@
 
 .screen {
     text-align: right;
-    padding: 10px;
+    max-height: 20px;
+    padding: 20px;
 }

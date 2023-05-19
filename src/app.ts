@@ -3,12 +3,15 @@ import './styles/app.css';
 import 'bootstrap';
 import * as checkType from 'check-types';
 
-const numericButton: HTMLCollectionOf<Element> = document.getElementsByClassName('numeric-button')!;
+const calcButton: HTMLCollectionOf<Element> = document.getElementsByClassName('calc-button')!;
+const computeButton: HTMLElement = document.getElementById('compute-button')!;
+const backSpaceButton: HTMLElement = document.getElementById('back-space-button')!;
+const clearButton: HTMLElement = document.getElementById('clear-button')!;
 const screen: HTMLElement = document.querySelector('.screen')!;
 let inputs: string[] = [];
-let num: number = 0;
+let computation: string = '';
 
-Array.from(numericButton).forEach((element: Element) => {
+Array.from(calcButton).forEach((element: Element) => {
     element.addEventListener('click', (event: Event) => {
         let button: HTMLButtonElement = event.target as HTMLButtonElement;
         if (checkType.string(button.dataset.value)) {
@@ -17,9 +20,32 @@ Array.from(numericButton).forEach((element: Element) => {
     });
 });
 
+computeButton.addEventListener('click', () => {
+    try {
+        const result: string = eval(computation);
+        screen.innerText = result;
+        inputs = [];
+        inputs.push(result);
+        computation = result;
+    } catch (error) {
+        screen.innerText = '';
+    }
+});
+
+backSpaceButton.addEventListener('click', () => {
+    inputs.pop();
+    screen.innerText = inputs.join('');
+});
+
+clearButton.addEventListener('click', () => {
+    inputs = [];
+    screen.innerText = '';
+    computation = '';
+});
+
 function setScreen(value: string): void {
     inputs.push(value);
-    const concantNumbers = inputs.join('');
-    screen.innerText = concantNumbers
-    num = parseInt(concantNumbers);
+    const result: string = inputs.join('');
+    screen.innerText = result;
+    computation = result;
 }
